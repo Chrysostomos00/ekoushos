@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="el" data-theme="sky">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elena Koushou Hadjidemetriou — Βουλευτικές Εκλογές 24/05/2026</title>
+  <meta name="description" content="Elena Koushou Hadjidemetriou — Δικηγόρος, Διαμεσολαβήτρια, Επικεφαλής AML & Πρόεδρος ΚΟΑΓ. Πρόγραμμα για Παιδεία, Οικονομία, Υγεία, Κράτος Δικαίου, Τρίτη Ηλικία, Βιώσιμες Πόλεις." />
+  <meta property="og:title" content="Elena Koushou Hadjidemetriou — 24/05/2026" />
+  <meta property="og:description" content="Μαζί για μια δίκαιη, σύγχρονη Κύπρο. Δες προτάσεις, άρθρα & δήλωσε συμμετοχή." />
+  <meta property="og:image" content="hero.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================
+       Sky Blues Theme (Light)
+       ========================= */
+    :root{
+      /* Core palette tuned for readability on light backgrounds */
+      --navy:#0C2340;     /* deep text/accent */
+      --blue:#2C74D7;     /* action/CTA */
+      --blue-2:#1A73E8;   /* alt action */
+      --sky:#8EC6FF;      /* light accent */
+      --ink:#0A2244;      /* body text */
+      --ink-2:#163B6E;    /* headings */
+      --off:#0B2A52;      /* darker text tone */
+      --muted:#5A6F90;    /* muted text */
+      --paper:#FFFFFF;    /* card surfaces */
+      --paper-2:#F6FAFF;  /* page bg top */
+      --paper-3:#EAF3FF;  /* page bg bottom */
+      --line:#D9E7FF;     /* borders */
+      --shadow:0 8px 24px rgba(16,50,92,.08);
+      --radius:14px;
+      --yellow:#FFD257;   /* subtle highlight */
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:linear-gradient(180deg, var(--paper-2) 0%, var(--paper-3) 100%);
+      font:400 16px/1.65 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin:0 auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Progress bar */
+    .scroll-progress{position:fixed; inset:0 0 auto 0; height:4px; z-index:9999}
+    .scroll-progress span{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--blue),var(--sky))}
+
+    /* Header/Nav */
+    .site-header{
+      position:sticky; top:0; z-index:1000;
+      background:rgba(234,243,255,.9);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:.7rem 0;
+    }
+    .brand{display:flex; align-items:center; gap:.6rem}
+    .brand img{height:36px; width:auto}
+    .brand-text{
+      font:900 22px/1 "Merriweather", serif; letter-spacing:.06em;
+      background:linear-gradient(180deg,#104CBA,#2C74D7);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .nav-menu{display:flex; gap:1.1rem; align-items:center}
+    .nav-menu a{
+      padding:.5rem .75rem; border-radius:8px; color:#10325C; font-weight:600;
+    }
+    .nav-menu a:hover{background:rgba(16,50,92,.08)}
+    .btn{
+      display:inline-block; padding:.75rem 1.1rem; border-radius:999px; font-weight:700; border:2px solid transparent
+    }
+    .btn-blue{background:var(--blue); color:#fff}
+    .btn-blue:hover{filter:brightness(1.05)}
+    .btn-outline{border-color:var(--blue); color:#10325C}
+    .btn-outline:hover{background:rgba(44,116,215,.12)}
+    .btn-red{background:var(--yellow); color:#14335A}
+    .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer}
+    .nav-toggle span{width:26px; height:2px; background:#14335A; display:block}
+
+    /* Election ribbon */
+    .election-ribbon{
+      text-align:center; padding:.5rem 1rem;
+      background:linear-gradient(90deg, var(--blue), var(--sky));
+      color:#0B2A52; font-weight:800; letter-spacing:.02em;
+      border-bottom:1px solid var(--line);
+    }
+
+    /* Hero */
+    .hero{
+      position:relative; min-height:92vh; overflow:hidden;
+      display:grid; place-items:center; text-align:center;
+    }
+    .layer{position:absolute; inset:0; background-size:cover; background-position:center; will-change:transform}
+    .layer-stars{
+      background: radial-gradient(circle at 20% 30%, rgba(16,50,92,.12) 0 2px, transparent 3px) 0 0/80px 80px,
+                  radial-gradient(circle at 70% 60%, rgba(16,50,92,.10) 0 2px, transparent 3px) 0 0/120px 120px;
+      opacity:.4;
+    }
+    .layer-flag{mix-blend-mode:screen; opacity:.12}
+    .layer-heroimg{filter:contrast(1.02) saturate(1.02) brightness(1); opacity:.95}
+
+    .hero-inner{position:relative; z-index:5; padding:5rem 0 4rem}
+    .hero-title{
+      color:var(--ink-2);
+      font:900 clamp(36px, 6vw, 68px)/1.05 "Merriweather", serif;
+      margin:0 0 .5rem;
+    }
+    .wave-underline{position:relative; display:inline-block; padding-bottom:.5rem}
+    .wave-underline::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:10px;
+      background:
+        radial-gradient(10px 6px at 10px 7px, var(--yellow) 99%, transparent 100%) repeat-x 0 0/32px 10px,
+        linear-gradient(var(--yellow), var(--yellow));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    }
+    .hero-kicker{color:#1C3F74; margin:.3rem 0 1.2rem; font-weight:600; letter-spacing:.02em}
+    .hero-cta{display:flex; gap:.75rem; justify-content:center}
+
+    /* Sticky quick actions */
+    .sticky-donate{
+      position:fixed; left:0; right:0; bottom:-110px; z-index:950;
+      transition:transform .6s ease; transform:translateY(0);
+    }
+    .sticky-donate.show{transform:translateY(-110px)}
+    .sd-inner{
+      margin:0 auto; width:min(1100px, 94%);
+      background:#104CBA; border:1px solid rgba(255,255,255,.14);
+      padding:.65rem .9rem; border-radius:14px 14px 0 0;
+      display:flex; align-items:center; gap:.75rem; justify-content:space-between;
+      box-shadow:0 -8px 32px rgba(0,0,0,.18); color:#fff;
+    }
+    .sd-text{font-weight:800; letter-spacing:.02em}
+    .sd-amounts{display:flex; gap:.4rem; flex-wrap:wrap}
+    .chip{
+      border:1px solid rgba(255,255,255,.28); background:rgba(255,255,255,.12);
+      padding:.45rem .8rem; border-radius:999px; color:#fff; font-weight:800; cursor:pointer
+    }
+    .chip:hover{background:rgba(255,255,255,.2)}
+    .sd-cta{background:#fff; color:#104CBA; border-radius:999px; padding:.6rem 1rem; font-weight:800}
+
+    /* Sections */
+    .section{padding: clamp(60px, 8vw, 100px) 0; position:relative}
+    .h-section{
+      color:var(--ink-2);
+      font:900 clamp(26px, 4vw, 42px)/1.1 "Merriweather", serif;
+      margin:0 0 .7rem;
+    }
+    .center{text-align:center}
+    .grid-2{display:grid; gap:2rem; grid-template-columns:1.1fr .9fr}
+    @media (max-width: 960px){ .grid-2{grid-template-columns:1fr} }
+
+    /* About */
+    .about .about-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius); padding:1.2rem; box-shadow:var(--shadow);
+      color:var(--ink);
+    }
+    .portrait{width:100%; max-width:460px; margin:0 auto; border-radius:12px}
+    .about p{color:var(--ink)}
+    .readmore summary{cursor:pointer; color:var(--blue); font-weight:800; margin-top:.8rem}
+
+    /* Quote */
+    .quote blockquote{
+      font:900 clamp(20px,3vw,32px)/1.25 "Merriweather", serif;
+      text-align:center; color:var(--ink-2);
+      background:#fff; border:1px solid var(--line); border-radius:16px;
+      padding:1.2rem; box-shadow:var(--shadow);
+    }
+
+    /* Program */
+    .priorities{
+      background: radial-gradient(1000px 500px at 50% -200px, rgba(140,198,255,.22), transparent)
+    }
+    .bg-parallax{position:absolute; inset:0; background-size:cover; background-position:center; opacity:.24}
+    .cards{display:grid; gap:1.2rem; grid-template-columns:repeat(3, 1fr); margin-top:1.2rem}
+    @media (max-width: 1100px){ .cards{grid-template-columns:repeat(2, 1fr)} }
+    @media (max-width: 640px){ .cards{grid-template-columns:1fr} }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius); padding:1.2rem 1rem; min-height:180px;
+      transition:transform .25s ease, box-shadow .25s ease;
+      color:var(--ink);
+      box-shadow:var(--shadow);
+    }
+    .card h3{color:var(--ink-2); margin:0 0 .35rem}
+    .card:hover{transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,.12)}
+    .card details{margin-top:.6rem}
+    .card summary{cursor:pointer; color:var(--blue); font-weight:800}
+
+    /* Articles */
+    .articles{background:linear-gradient(180deg, #F5F9FF 0%, #EEF5FF 100%)}
+    .article-grid{display:grid; gap:1.2rem; grid-template-columns:repeat(3,1fr); margin-top:1rem}
+    @media (max-width: 1100px){ .article-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width: 680px){ .article-grid{grid-template-columns:1fr} }
+    .article-card{
+      background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column;
+    }
+    .article-cover{aspect-ratio:16/9; background:#DDEBFF center/cover no-repeat}
+    .article-body{padding:1rem 1rem 1.1rem}
+    .article-meta{display:flex; gap:.6rem; align-items:center; color:var(--muted); font-size:.9rem; margin:.2rem 0 .5rem}
+    .tag{padding:.2rem .55rem; border-radius:999px; background:#EEF5FF; color:#14335A; border:1px solid var(--line); font-weight:700; font-size:.8rem}
+    .article-title{margin:.2rem 0 .35rem; color:var(--ink-2); font-weight:800; font-size:1.1rem}
+    .article-excerpt{color:var(--ink); opacity:.95}
+    .article-actions{display:flex; gap:.6rem; margin-top:.8rem}
+    .btn-link{color:var(--blue); font-weight:800}
+    .articles-toolbar{display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; margin:.6rem 0 1rem}
+    .articles-toolbar input{
+      padding:.6rem .8rem; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); width:260px; max-width:100%;
+      outline:none;
+    }
+    .filter-chip{
+      padding:.45rem .8rem; border-radius:999px; background:#F1F7FF; border:1px solid var(--line); font-weight:800; color:#163B6E; cursor:pointer
+    }
+    .filter-chip.active{background:#DCEBFF}
+
+    /* Record */
+    .record{
+      background:linear-gradient(180deg, rgba(140,198,255,.18), rgba(44,116,215,.10))
+    }
+    .stats{display:flex; gap:1.2rem; flex-wrap:wrap; margin-top:.8rem}
+    .stat{background:#fff; border:1px solid var(--line); border-radius:12px; padding:1rem 1.2rem; min-width:160px; box-shadow:var(--shadow); color:var(--ink)}
+    .num{font:900 36px/1 "Merriweather", serif; color:var(--ink-2)}
+    .label{color:var(--muted)}
+    .photo-stack{position:relative; aspect-ratio:16/10; border-radius:16px; overflow:hidden; box-shadow:var(--shadow)}
+    .photo-stack img{width:100%; height:100%; object-fit:cover}
+    .photo-frame{position:absolute; inset:12px; border:3px solid rgba(16,50,92,.25); border-radius:12px; pointer-events:none}
+
+    /* Involved & Contact */
+    .involved-wrap{display:grid; gap:1.2rem; grid-template-columns:1.1fr .9fr}
+    @media (max-width: 960px){ .involved-wrap{grid-template-columns:1fr} }
+    .form, .contact-box{
+      background:#fff; border:1px solid var(--line);
+      border-radius:var(--radius); padding:1.2rem; box-shadow:var(--shadow); color:var(--ink)
+    }
+    .form-row{display:flex; flex-direction:column; gap:.35rem; margin-bottom:.8rem}
+    label{font-weight:700; color:var(--ink-2)}
+    input, select{
+      padding:.7rem .8rem; border-radius:10px; border:1px solid var(--line);
+      background:#fff; color:var(--ink); outline:none
+    }
+    input:focus, select:focus{border-color:var(--blue-2); box-shadow:0 0 0 3px rgba(26,115,232,.18)}
+    .form .btn-blue{margin-top:.4rem}
+    .form-msg{min-height:1.2em; color:#0B2A52; margin-top:.5rem}
+    .contact-box h3{margin:0 0 .4rem; font:900 28px/1.2 "Merriweather", serif; color:var(--ink-2)}
+    .contact-actions{display:flex; gap:.5rem; flex-wrap:wrap; margin:.8rem 0}
+    .contact-chip{
+      display:inline-block; padding:.6rem .9rem; border-radius:999px;
+      background:#F1F7FF; border:1px solid var(--line);
+      font-weight:800; color:#163B6E;
+    }
+    .contact-chip:hover{background:#E7F1FF}
+
+    /* Footer */
+    .site-footer{background:#0C2340; border-top:1px solid #103057; color:#EAF2FF}
+    .foot{display:grid; gap:1rem; grid-template-columns:1.2fr 1fr 1fr; padding:1.2rem 0}
+    @media (max-width: 900px){ .foot{grid-template-columns:1fr} }
+    .foot-brand{display:flex; gap:.7rem; align-items:center}
+    .foot-brand img{width:44px; height:44px}
+    .foot-nav{display:flex; gap:1rem; flex-wrap:wrap}
+    .foot-legal{opacity:.85}
+
+    /* Interactions */
+    .reveal{opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1; transform:translateY(0)}
+
+    /* Mobile Nav */
+    @media (max-width: 900px){
+      .nav-toggle{display:flex}
+      .nav-menu{
+        position:fixed; right:1rem; top:66px; background:#fff;
+        border:1px solid var(--line); border-radius:12px; padding:.8rem;
+        display:none; flex-direction:column; gap:.35rem; box-shadow:var(--shadow)
+      }
+      .nav-menu a{color:#10325C}
+      .nav-menu.show{display:flex}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .reveal{transition:none}
+      .layer, .bg-parallax{will-change:auto}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Μπάρα προόδου κύλισης -->
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <!-- Sticky Γρήγορες Ενέργειες -->
+  <aside class="sticky-donate" role="region" aria-label="Γρήγορες ενέργειες">
+    <div class="sd-inner">
+      <span class="sd-text">Στήριξε / Μάθε / Επικοινώνησε</span>
+      <div class="sd-amounts" role="group" aria-label="Συντομεύσεις">
+        <button class="chip" data-jump="#program">Πρόγραμμα</button>
+        <button class="chip" data-jump="#articles">Άρθρα</button>
+        <button class="chip" data-jump="#contact">Επικοινωνία</button>
+      </div>
+      <a class="sd-cta" href="#get-involved">Συμμετείχε</a>
+    </div>
+  </aside>
+
+  <!-- Κεφαλίδα / Πλοήγηση -->
+  <header class="site-header" role="banner">
+    <div class="nav container">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Λογότυπο" />
+        <span class="brand-text">ELENA 2026</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Άνοιγμα μενού">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Κύρια Πλοήγηση">
+        <a href="#about">Σχετικά</a>
+        <a href="#program">Θέσεις & Πρόγραμμα</a>
+        <a href="#articles">Άρθρα</a>
+        <a href="#record">Έργο</a>
+        <a href="#get-involved" class="btn btn-blue">Συμμετοχή</a>
+        <a href="#contact" class="btn btn-red">Επικοινωνία</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+    <!-- Ταινία ημερομηνίας -->
+    <div class="election-ribbon" aria-hidden="true">Βουλευτικές Εκλογές • 24 Μαΐου 2026</div>
+
+    <!-- Hero με parallax -->
+    <section class="hero" aria-label="Κεντρική εικόνα">
+      <div class="layer layer-stars" data-parallax="0.15" aria-hidden="true"></div>
+      <div class="layer layer-flag" data-parallax="0.3" aria-hidden="true" style="background-image:url('bg-flag.jpg')"></div>
+      <div class="layer layer-heroimg" data-parallax="0.5" aria-hidden="true" style="background-image:url('hero.jpg')"></div>
+
+      <div class="hero-inner container">
+        <h1 class="hero-title">
+          <span class="wave-underline">Elena Koushou<br/>Hadjidemetriou</span>
+        </h1>
+        <p class="hero-kicker">Δικαιοσύνη • Διαφάνεια • Στέγαση για Όλους</p>
+        <div class="hero-cta">
+          <a href="#program" class="btn btn-blue">Δες το Πρόγραμμα</a>
+          <a href="#get-involved" class="btn btn-outline">Δήλωσε Συμμετοχή</a>
+        </div>
+        <div class="scroll-hint" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Σχετικά με την Έλενα -->
+    <section id="about" class="section about">
+      <div class="container grid-2">
+        <div class="about-card reveal">
+          <img class="portrait" src="portrait.png" alt="Πορτρέτο της Elena Koushou Hadjidemetriou" />
+        </div>
+        <div class="about-card reveal">
+          <h2 class="h-section">Σχετικά με την Έλενα</h2>
+          <p>
+            Η Elena Koushou Hadjidemetriou είναι εταίρος στη δικηγορική εταιρεία
+            Koushos Korfiotis Papacharalambous LLC, έμπειρη δικηγόρος με παρουσία σε όλα τα επίπεδα Δικαστηρίων, διαμεσολαβήτρια και διαιτήτρια. Από το 2018 ηγείται του Τμήματος AML Συμμόρφωσης, πιστοποιημένη ACAMS και ενεργή εκπαιδεύτρια (HRDA/EIMF).
+            Ως Πρόεδρος του ΚΟΑΓ εργάζεται για ρεαλιστικές λύσεις προσιτής στέγασης.
+          </p>
+          <details class="readmore">
+            <summary>Αναλυτικό βιογραφικό</summary>
+            <ul>
+              <li>Δικαστηριακή εμπειρία: Ανώτατο & Επαρχιακά (εργατικό, ποινικό, ιατρική αμέλεια).</li>
+              <li>Διαμεσολάβηση/Διαιτησία: εκπαίδευση CCCI, εμπειρία σε σύνθετες υποθέσεις.</li>
+              <li>AML/Συμμόρφωση: επικεφαλής από το 2018, εσωτερικές πολιτικές & εκπαίδευση.</li>
+              <li>Δημόσια αποστολή: ΚΟΑΓ – στοχευμένα έργα προσιτής κατοικίας.</li>
+            </ul>
+          </details>
+          <div class="quick-cta">
+            <a href="#program" class="btn btn-outline">Θέσεις & Πρόγραμμα</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote / Κάλεσμα για ψήφο -->
+    <section class="section quote">
+      <div class="container">
+        <blockquote class="reveal">
+          «Η ψήφος σου είναι η φωνή σου. Στις 24 Μαΐου 2026, ας τη μετατρέψουμε σε πράξη για μια δίκαιη, σύγχρονη Κύπρο.»
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Θέσεις & Πρόγραμμα -->
+    <section id="program" class="section priorities">
+      <div class="bg-parallax" data-parallax="0.2" style="background-image:url('bg-crowd.jpg')" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="h-section center reveal">Θέσεις & Πρόγραμμα</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Εκπαίδευση & Παιδεία</h3>
+            <p>Σύγχρονα προγράμματα, ψηφιακά εργαλεία, ίσες ευκαιρίες για κάθε παιδί.</p>
+            <details>
+              <summary>Διαβάστε αναλυτικά</summary>
+              <ul>
+                <li>STEM & κριτική σκέψη σε κάθε βαθμίδα.</li>
+                <li>Ενίσχυση ψυχοκοινωνικών δομών & επαγγελματικού προσανατολισμού.</li>
+                <li>Επιμόρφωση εκπαιδευτικών & ψηφιακές υποδομές.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card reveal">
+            <h3>Οικονομία & Ανάπτυξη</h3>
+            <p>Ανάπτυξη με κοινωνική συνοχή, καινοτομία και στήριξη ΜΜΕ.</p>
+            <details>
+              <summary>Διαβάστε αναλυτικά</summary>
+              <ul>
+                <li>Κίνητρα για start-ups & πρόσβαση σε χρηματοδότηση.</li>
+                <li>Απλούστευση διαδικασιών & ψηφιακές υπηρεσίες.</li>
+                <li>Δίκαιες πολιτικές κόστους διαβίωσης.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card reveal">
+            <h3>Υγεία</h3>
+            <p>Ενίσχυση ΓεΣΥ, πρόληψη και ποιοτική φροντίδα κοντά στον πολίτη.</p>
+            <details>
+              <summary>Διαβάστε αναλυτικά</summary>
+              <ul>
+                <li>Μείωση αναμονών με διαφανή KPIs.</li>
+                <li>Πρόληψη: εμβολιασμοί, screening, ψυχική υγεία.</li>
+                <li>Ασφάλεια ασθενών & αξιολόγηση ποιότητας.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card reveal">
+            <h3>Κράτος Δικαίου & Διαφάνεια</h3>
+            <p>Ισχυροί θεσμοί, λογοδοσία, αποτελεσματική Δικαιοσύνη.</p>
+            <details>
+              <summary>Διαβάστε αναλυτικά</summary>
+              <ul>
+                <li>Ψηφιοποίηση Δικαιοσύνης & ταχύτερη απονομή.</li>
+                <li>Ενίσχυση AML/συμμόρφωσης & εποπτείας.</li>
+                <li>Ανοικτά δεδομένα & κανόνες σύγκρουσης συμφερόντων.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card reveal">
+            <h3>Τρίτη Ηλικία</h3>
+            <p>Αξιοπρέπεια, φροντίδα στο σπίτι & ενεργός ρόλος στην κοινότητα.</p>
+            <details>
+              <summary>Διαβάστε αναλυτικά</summary>
+              <ul>
+                <li>Κατ’ οίκον φροντίδα & υποστήριξη φροντιστών.</li>
+                <li>Κέντρα ημέρας/δραστηριοτήτων, προσβάσιμες υπηρεσίες.</li>
+                <li>Δίκτυα κατά της μοναξιάς.</li>
+              </ul>
+            </details>
+          </article>
+
+          <article class="card reveal">
+            <h3>Πόλεις & Βιώσιμο Αστικό Περιβάλλον</h3>
+            <p>Έξυπνες, πράσινες πόλεις με προσιτή στέγη & ποιότητα ζωής.</p>
+            <details>
+              <summary>Διαβάστε αναλυτικά</summary>
+              <ul>
+                <li>Στοχευμένη προσιτή στέγαση & ταχύτερες αδειοδοτήσεις.</li>
+                <li>Πράσινες μετακινήσεις, σκίαση & αστικό πράσινο.</li>
+                <li>Ανθεκτικότητα σε θερμότητα/πλημμύρες.</li>
+              </ul>
+            </details>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ΑΡΘΡΑ -->
+    <section id="articles" class="section articles">
+      <div class="container">
+        <h2 class="h-section center reveal">Άρθρα & Παρεμβάσεις</h2>
+
+        <div class="articles-toolbar">
+          <input id="articleSearch" type="search" placeholder="Αναζήτηση άρθρων..." aria-label="Αναζήτηση άρθρων" />
+          <button class="filter-chip" data-tag="all">Όλα</button>
+          <button class="filter-chip" data-tag="παιδεία">Παιδεία</button>
+          <button class="filter-chip" data-tag="οικονομία">Οικονομία</button>
+          <button class="filter-chip" data-tag="υγεία">Υγεία</button>
+          <button class="filter-chip" data-tag="διαφάνεια">Διαφάνεια</button>
+          <button class="filter-chip" data-tag="πόλεις">Πόλεις</button>
+        </div>
+
+        <div class="article-grid" id="articleGrid">
+          <!-- Card 1 -->
+          <article class="article-card" data-tags="παιδεία">
+            <div class="article-cover" style="background-image:url('article-1.jpg')"></div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="tag">Παιδεία</span>
+                <time datetime="2025-07-10">10 Ιουλ 2025</time>
+              </div>
+              <h3 class="article-title">Σχολείο του 2030: δεξιότητες & ισότητα πρόσβασης</h3>
+              <p class="article-excerpt">Πώς περνάμε από την αποστήθιση στην κριτική σκέψη, χωρίς να αφήνουμε κανένα παιδί πίσω.</p>
+              <div class="article-actions">
+                <a href="#" class="btn-link">Διαβάστε</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="article-card" data-tags="οικονομία">
+            <div class="article-cover" style="background-image:url('article-2.jpg')"></div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="tag">Οικονομία</span>
+                <time datetime="2025-08-02">2 Αυγ 2025</time>
+              </div>
+              <h3 class="article-title">ΜΜΕ & καινοτομία: ρεαλιστική στήριξη για ανάπτυξη</h3>
+              <p class="article-excerpt">Απλούστευση διαδικασιών, πρόσβαση σε ρευστότητα & δίκτυα για εξωστρέφεια.</p>
+              <div class="article-actions">
+                <a href="#" class="btn-link">Διαβάστε</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="article-card" data-tags="υγεία">
+            <div class="article-cover" style="background-image:url('article-3.jpg')"></div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="tag">Υγεία</span>
+                <time datetime="2025-09-14">14 Σεπ 2025</time>
+              </div>
+              <h3 class="article-title">ΓεΣΥ με επίκεντρο τον πολίτη: δείκτες ποιότητας</h3>
+              <p class="article-excerpt">Μετρήσιμη βελτίωση στην πρωτοβάθμια, ώστε τα νοσοκομεία να ανασάνουν.</p>
+              <div class="article-actions">
+                <a href="#" class="btn-link">Διαβάστε</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="article-card" data-tags="διαφάνεια">
+            <div class="article-cover" style="background-image:url('article-4.jpg')"></div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="tag">Διαφάνεια</span>
+                <time datetime="2025-10-01">1 Οκτ 2025</time>
+              </div>
+              <h3 class="article-title">Ανοικτά δεδομένα & λογοδοσία στην πράξη</h3>
+              <p class="article-excerpt">Ένα διαφανές κράτος χτίζει εμπιστοσύνη και μειώνει τη γραφειοκρατία.</p>
+              <div class="article-actions">
+                <a href="#" class="btn-link">Διαβάστε</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="article-card" data-tags="πόλεις">
+            <div class="article-cover" style="background-image:url('article-5.jpg')"></div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="tag">Πόλεις</span>
+                <time datetime="2025-11-20">20 Νοε 2025</time>
+              </div>
+              <h3 class="article-title">Βιώσιμες πόλεις: σκίαση, πράσινο και προσβασιμότητα</h3>
+              <p class="article-excerpt">Απλές παρεμβάσεις που αλλάζουν την καθημερινότητα σε κάθε γειτονιά.</p>
+              <div class="article-actions">
+                <a href="#" class="btn-link">Διαβάστε</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="article-card" data-tags="παιδεία διαφάνεια">
+            <div class="article-cover" style="background-image:url('article-6.jpg')"></div>
+            <div class="article-body">
+              <div class="article-meta">
+                <span class="tag">Παιδεία</span>
+                <time datetime="2025-12-05">5 Δεκ 2025</time>
+              </div>
+              <h3 class="article-title">Διαφάνεια στα σχολεία: συμμετοχή γονέων & μαθητών</h3>
+              <p class="article-excerpt">Ανοικτές πρακτικές που ενισχύουν εμπιστοσύνη και αποτελεσματικότητα.</p>
+              <div class="article-actions">
+                <a href="#" class="btn-link">Διαβάστε</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Έργο & Ηγεσία -->
+    <section id="record" class="section record">
+      <div class="container grid-2">
+        <div class="record-copy reveal">
+          <h2 class="h-section">Έργο & Ηγεσία</h2>
+          <p>Από την αίθουσα του δικαστηρίου μέχρι την υπηρεσία προς τον πολίτη, η Έλενα παραδίδει πρακτικά αποτελέσματα.</p>
+          <div class="stats">
+            <div class="stat">
+              <div class="num" data-count="15">0</div>
+              <div class="label">+ Χρόνια πράξης</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="1000">0</div>
+              <div class="label">+ Υποθέσεις/υποστηρίξεις</div>
+            </div>
+            <div class="stat">
+              <div class="num" data-count="50">0</div>
+              <div class="label">+ Σεμινάρια/εκπαιδεύσεις</div>
+            </div>
+          </div>
+        </div>
+        <div class="record-visual reveal">
+          <div class="photo-stack">
+            <img src="bg-housing.jpg" alt="Αστική στέγαση & έργα" />
+            <div class="photo-frame"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Συμμετοχή & Επικοινωνία -->
+    <section id="get-involved" class="section involved">
+      <div class="container">
+        <h2 class="h-section center reveal">Συμμετείχε</h2>
+        <div class="involved-wrap">
+          <form class="form reveal" aria-label="Φόρμα εθελοντισμού" novalidate>
+            <div class="form-row">
+              <label for="name">Ονοματεπώνυμο</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="zip">Ταχυδρομικός κώδικας</label>
+              <input id="zip" name="zip" inputmode="numeric" pattern="[0-9]{3,10}" required />
+            </div>
+            <div class="form-row">
+              <label for="interest">Πως θέλεις να βοηθήσεις;</label>
+              <select id="interest" name="interest">
+                <option>Εθελοντισμός</option>
+                <option>Φιλοξενία συζήτησης</option>
+                <option>Επαγγελματική υποστήριξη</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-blue">Δήλωσε συμμετοχή</button>
+            <p class="form-msg" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-box reveal" id="contact">
+            <h3>Επικοινωνία</h3>
+            <p>Μίλησε άμεσα με την ομάδα:</p>
+            <div class="contact-actions">
+              <a class="contact-chip" id="waLink" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+              <a class="contact-chip" id="viberLink" target="_blank" rel="noopener" aria-label="Viber">Viber</a>
+              <a class="contact-chip" id="mailLink" aria-label="Email">Email</a>
+              <a class="contact-chip" id="telLink" aria-label="Τηλέφωνο">Τηλέφωνο</a>
+            </div>
+            <small class="fineprint">Ενημέρωσε τα στοιχεία επικοινωνίας στο <strong>script → CONTACT</strong>.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Υποσέλιδο -->
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="foot-brand">
+        <img src="logo.png" alt="" />
+        <div>
+          <strong>Elena Koushou Hadjidemetriou</strong><br />
+          Παιδεία • Δικαιοσύνη • Στέγαση
+        </div>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="#about">Σχετικά</a>
+        <a href="#program">Πρόγραμμα</a>
+        <a href="#articles">Άρθρα</a>
+        <a href="#record">Έργο</a>
+        <a href="#get-involved">Συμμετοχή</a>
+      </nav>
+      <div class="foot-legal">© 2025 • Όλα τα δικαιώματα διατηρούνται.</div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== ΡΥΘΜΙΣΕΙΣ ΕΠΙΚΟΙΝΩΝΙΑΣ (ΑΛΛΑΞΕ ΤΙΣ) =====
+    const CONTACT = {
+      phone: "+357000000000", // π.χ. +35799123456
+      email: "info@example.com",
+      whatsappText: "Γεια σας! Θα ήθελα να βοηθήσω/ενημερωθώ για την καμπάνια."
+    };
+
+    // Smooth internal nav + mobile menu
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const open = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!open));
+        navMenu.classList.toggle('show');
+      });
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        navMenu?.classList.remove('show');
+        navToggle?.setAttribute('aria-expanded','false');
+      });
+    });
+
+    // Scroll progress
+    const bar = document.querySelector('.scroll-progress span');
+    const onScrollProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop)/(h.scrollHeight - h.clientHeight);
+      bar.style.width = (scrolled * 100).toFixed(2) + '%';
+    };
+    document.addEventListener('scroll', onScrollProgress, {passive:true});
+
+    // Sticky quick actions
+    const sticky = document.querySelector('.sticky-donate');
+    document.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      if (y > 500) sticky.classList.add('show'); else sticky.classList.remove('show');
+    });
+    document.querySelectorAll('.chip[data-jump]').forEach(chip=>{
+      chip.addEventListener('click', ()=>{
+        const sel = chip.getAttribute('data-jump');
+        const el = document.querySelector(sel);
+        if (el) el.scrollIntoView({behavior:'smooth'});
+      });
+    });
+
+    // Parallax (iOS friendly)
+    const layers = [...document.querySelectorAll('[data-parallax]')];
+    const parallax = () => {
+      const top = window.scrollY;
+      layers.forEach(layer => {
+        const speed = parseFloat(layer.dataset.parallax || '0.2');
+        layer.style.transform = `translateY(${top * speed * -0.5}px)`;
+      });
+    };
+    document.addEventListener('scroll', parallax, {passive:true});
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    },{threshold:.12});
+    reveals.forEach(el=>io.observe(el));
+
+    // Stat counters
+    const nums = document.querySelectorAll('.num[data-count]');
+    const io2 = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.count, 10) || 0;
+        let start = 0;
+        const step = Math.ceil(target / 60); // ~1s
+        const tick = () => {
+          start += step;
+          if (start >= target){ el.textContent = target.toLocaleString('el-GR'); return; }
+          el.textContent = start.toLocaleString('el-GR');
+          requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        io2.unobserve(el);
+      });
+    },{threshold:.5});
+    nums.forEach(n=>io2.observe(n));
+
+    // Φόρμα συμμετοχής (demo)
+    const form = document.querySelector('.form');
+    if (form){
+      form.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const msg = form.querySelector('.form-msg');
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.name || !data.email || !data.zip){
+          msg.textContent = 'Συμπλήρωσε όλα τα πεδία.';
+          return;
+        }
+        msg.textContent = 'Ευχαριστούμε! Θα επικοινωνήσουμε σύντομα.';
+        form.reset();
+      });
+    }
+
+    // Συνδέσμοι επικοινωνίας — builds
+    const wa = document.getElementById('waLink');
+    const viber = document.getElementById('viberLink');
+    const mail = document.getElementById('mailLink');
+    const tel = document.getElementById('telLink');
+
+    if (wa) wa.href = `https://wa.me/${CONTACT.phone.replace(/\\D/g,'')}?text=${encodeURIComponent(CONTACT.whatsappText)}`;
+    if (viber) viber.href = `viber://chat?number=${encodeURIComponent(CONTACT.phone)}`;
+    if (mail) mail.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent('Επικοινωνία για την καμπάνια 2026')}`;
+    if (tel) tel.href = `tel:${CONTACT.phone}`;
+
+    // ======== Articles: Search & Tag Filter ========
+    const searchInput = document.getElementById('articleSearch');
+    const grid = document.getElementById('articleGrid');
+    const cards = Array.from(grid.querySelectorAll('.article-card'));
+    const chips = Array.from(document.querySelectorAll('.filter-chip'));
+    let activeTag = 'all';
+
+    function filterArticles(){
+      const q = (searchInput.value || '').trim().toLowerCase();
+      cards.forEach(card=>{
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const text = card.innerText.toLowerCase();
+        const matchText = !q || text.includes(q);
+        const matchTag = activeTag === 'all' || tags.split(' ').includes(activeTag);
+        card.style.display = (matchText && matchTag) ? '' : 'none';
+      });
+    }
+    if (searchInput) searchInput.addEventListener('input', filterArticles);
+    chips.forEach(ch=>{
+      ch.addEventListener('click', ()=>{
+        chips.forEach(x=>x.classList.remove('active'));
+        ch.classList.add('active');
+        activeTag = ch.dataset.tag;
+        filterArticles();
+      });
+    });
+  </script>
+</body>
+</html>
