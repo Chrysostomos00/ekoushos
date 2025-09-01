@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="el" data-theme="sky">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elena Koushou Hadjidemetriou — Βουλευτικές Εκλογές 24/05/2026</title>
+  <meta name="description" content="Elena Koushou Hadjidemetriou — Δικηγόρος, Διαμεσολαβήτρια, Επικεφαλής AML & Πρόεδρος ΚΟΑΓ. Πρόγραμμα για Παιδεία, Οικονομία, Υγεία, Κράτος Δικαίου, Τρίτη Ηλικία, Βιώσιμες Πόλεις." />
+  <meta property="og:title" content="Elena Koushou Hadjidemetriou — 24/05/2026" />
+  <meta property="og:description" content="Μαζί για μια δίκαιη, σύγχρονη Κύπρο. Δες προτάσεις, άρθρα & δήλωσε συμμετοχή." />
+  <meta property="og:image" content="hero-poster.png" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    /* =====================================================
+       ENHANCED THEME & PRODUCTION-LEVEL LAYOUT
+       ===================================================== */
+    :root{
+      --navy:#0C2340;        /* deep accent */
+      --blue:#2C74D7;        /* primary CTA */
+      --blue-2:#1A73E8;      /* alt CTA */
+      --sky:#8EC6FF;         /* accents */
+      --ink:#0A2244;         /* body text */
+      --ink-2:#163B6E;       /* headings */
+      --muted:#5A6F90;       /* secondary text */
+      --paper:#FFFFFF;       /* card surface */
+      --paper-2:#F6FAFF;     /* page bg top */
+      --paper-3:#EAF3FF;     /* page bg bottom */
+      --line:#D9E7FF;        /* borders */
+      --yellow:#FFD257;      /* subtle highlight */
+      --shadow:0 8px 24px rgba(16,50,92,.08);
+      --header-height: 89px; /* For mobile menu positioning */
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background-color: var(--paper-2);
+      font:400 16px/1.65 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    img, svg{max-width:100%; height:auto; display:block}
+    a{color:inherit; text-decoration:none}
+    .container{width:min(1200px, 92%); margin:0 auto}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    /* Scroll progress */
+    .scroll-progress{position:fixed; inset:0 0 auto 0; height:4px; z-index:9999}
+    .scroll-progress span{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--blue),var(--sky))}
+
+    /* Header / Nav */
+    .site-header{
+      position:sticky; top:0; z-index:1000;
+      background:rgba(246, 250, 255, .85);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:.5rem 0; height: var(--header-height);}
+    .brand img{height: 75px; width:auto} /* Slightly adjusted logo size */
+    .nav-menu{display:flex; gap:1.1rem; align-items:center}
+    .nav-menu a{padding:.5rem .75rem; border-radius:8px; color:#10325C; font-weight:600; transition: background-color .2s ease;}
+    .nav-menu a:hover{background:rgba(16,50,92,.08)}
+    .btn{
+      display:inline-block; padding:.75rem 1.25rem; border-radius:999px; font-weight:700; border:2px solid transparent; transition: all .2s ease;
+    }
+    .btn-blue{background:var(--blue); color:#fff}
+    .btn-blue:hover{filter:brightness(1.1); transform: translateY(-2px); box-shadow: 0 4px 10px rgba(44, 116, 215, 0.3);}
+    .btn-outline{border-color:var(--blue); color:#10325C}
+    .btn-outline:hover{background:rgba(44,116,215,.12); transform: translateY(-2px);}
+    .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:0; cursor:pointer; padding: 10px;}
+    .nav-toggle span{width:26px; height:2px; background:#14335A; display:block; transition: transform 0.3s ease, opacity 0.3s ease;}
+    .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+
+    /* Election ribbon */
+    .election-ribbon{text-align:center; padding:.5rem 1rem; background:linear-gradient(90deg, var(--blue), var(--sky)); color:#0B2A52; font-weight:800; letter-spacing:.02em}
+
+    /* === HERO SECTION: DYNAMIC KEN BURNS EFFECT === */
+    .hero{
+      position:relative; min-height:95vh;
+      display:grid; place-items:center; text-align:center; color: #fff;
+      overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute; inset: 0; z-index: 1;
+    }
+    /* Ken Burns background layer */
+    .hero::before {
+      background: url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1949&auto=format&fit=crop') center center / cover no-repeat;
+      animation: ken-burns 20s infinite;
+    }
+    /* Darkening overlay */
+    .hero::after { background-color: rgba(12, 35, 64, 0.78); }
+    @keyframes ken-burns {
+      0% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.1) rotate(1deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+
+    .hero-inner{position:relative; z-index:2; padding:5rem 0 4rem}
+    .hero-title{
+      color:#fff;
+      font:900 clamp(38px, 6vw, 72px)/1.05 "Merriweather", serif;
+      margin:0 0 .5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .wave-underline{position:relative; display:inline-block; padding-bottom:.5rem}
+    .wave-underline::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:10px;
+      background:
+        radial-gradient(10px 6px at 10px 7px, var(--yellow) 99%, transparent 100%) repeat-x 0 0/32px 10px,
+        linear-gradient(var(--yellow), var(--yellow));
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    }
+    .hero-kicker{color:#EAF3FF; margin:.3rem 0 1.5rem; font-weight:600; font-size: 1.1rem; letter-spacing:.02em; text-shadow: 0 1px 4px rgba(0,0,0,0.2);}
+    .hero-cta{display:flex; gap:.75rem; justify-content:center; align-items: center;}
+    .hero .btn-outline { color: #fff; border-color: #fff; }
+    .hero .btn-outline:hover { background: rgba(255,255,255,0.15); }
+    
+
+    /* === GENERAL SECTION STYLING === */
+    .section{padding: clamp(60px, 8vw, 100px) 0; position:relative}
+    .section-bg-paper { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .h-section{
+      color:var(--ink-2);
+      font:900 clamp(28px, 4vw, 44px)/1.1 "Merriweather", serif;
+      margin:0 0 .7rem;
+    }
+    .h-section + .section-subtitle {
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 650px;
+        margin: -0.5rem auto 2.5rem;
+    }
+    .center{text-align:center}
+    .grid-2{display:grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; grid-template-columns:1fr 1fr}
+
+    /* About */
+    .about-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:var(--radius); padding:clamp(1.5rem, 4vw, 2.5rem); box-shadow:var(--shadow);
+    }
+    .portrait{
+      width:100%; max-width:460px; margin:0 auto; border-radius:12px;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .portrait:hover { transform: scale(1.03); box-shadow: 0 16px 40px rgba(16,50,92,.15); }
+
+    /* === QUOTE SECTION: CENTERED ANIMATION FIX === */
+    .quote { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .quote .container { text-align: center; } /* Parent centering container */
+    .quote blockquote{
+      font:900 clamp(22px,3vw,34px)/1.3 "Merriweather", serif;
+      color:var(--ink-2);
+      padding:2.5rem 1rem; max-width: 900px;
+      margin: 1.5rem auto 0;
+      position: relative;
+    }
+    .quote-animation {
+        width: clamp(100px, 15vw, 150px);
+        height: auto;
+        margin: 0 auto;
+        /* Animation is now part of the flow, no absolute positioning needed */
+    }
+
+    /* === PROGRAM SECTION: ICONS & STAGGERED ANIMATION === */
+    .program-cards{display:grid; gap:1.5rem; grid-template-columns:repeat(3, 1fr); margin-top:3rem}
+    .program-card{
+      display: flex;
+      flex-direction: column;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius); padding:1.5rem;
+      transition:transform .25s ease, box-shadow .25s ease;
+      color:var(--ink);
+      box-shadow:var(--shadow);
+    }
+    .program-card h3{
+        color:var(--ink-2); margin: 0.75rem 0 .35rem; display: flex; align-items: center; gap: 0.75rem;
+    }
+    .program-card-icon { width: 32px; height: 32px; color: var(--blue); }
+    .program-card:hover{transform:translateY(-8px); box-shadow:0 14px 32px rgba(16,50,92,.14)}
+    .program-card p { margin-bottom: 1rem; flex-grow: 1; }
+    .program-card .read-more-prompt {
+        color: var(--blue); font-weight: 700;
+    }
+    .program-card .read-more-prompt::after { content: ' →'; }
+
+
+    /* === ARTICLES CAROUSEL: RESPONSIVE PEEK EFFECT === */
+    .articles .swiper {
+        overflow: visible; /* Required to see shadow of cards outside container */
+    }
+    .articles .swiper-slide { height: auto; display: flex; }
+    .article-card{
+      background:#fff; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+      box-shadow:var(--shadow); display:flex; flex-direction:column; width: 100%;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .article-card:hover { transform: translateY(-8px); box-shadow: 0 14px 32px rgba(16,50,92,.14); }
+    .article-card:hover .article-cover { transform: scale(1.05); }
+
+    .article-cover{aspect-ratio:16/9; background:#DDEBFF center/cover no-repeat; overflow:hidden; transition: transform .4s ease;}
+    .article-body{padding:1rem 1.2rem 1.2rem; display:flex; flex-direction: column; flex-grow: 1;}
+    .article-meta{display:flex; gap:.6rem; align-items:center; color:var(--muted); font-size:.9rem; margin:.2rem 0 .5rem}
+    .tag{padding:.2rem .55rem; border-radius:999px; background:#EEF5FF; color:#14335A; border:1px solid var(--line); font-weight:700; font-size:.8rem}
+    .article-title{margin:.2rem 0 .35rem; color:#0E2A59; font-weight:800; font-size:1.1rem}
+    .article-excerpt{color:#0A2244; opacity:.95; flex-grow: 1;}
+    .article-actions{margin-top:1rem}
+    .btn-link{color:var(--blue); font-weight:800}
+    
+    .swiper-nav { display: flex; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
+    .swiper-button-prev, .swiper-button-next {
+        position: static;
+        width: 44px; height: 44px; margin: 0;
+        background: var(--paper); border: 1px solid var(--line);
+        border-radius: 50%; color: var(--blue);
+        transition: background-color .2s;
+    }
+    .swiper-button-prev:hover, .swiper-button-next:hover { background-color: var(--paper-3); }
+    .swiper-button-prev::after, .swiper-button-next::after { font-size: 18px; font-weight: 900; }
+    .swiper-button-disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* === WATCH SECTION: NEW 3D TILT EFFECT === */
+    .video-section-container { perspective: 1200px; }
+    .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .video-card {
+        display: block; border-radius: var(--radius); overflow: hidden;
+        box-shadow: var(--shadow);
+        transform-style: preserve-3d;
+        transition: transform .4s cubic-bezier(.25,.8,.25,1), box-shadow .4s cubic-bezier(.25,.8,.25,1);
+    }
+    .video-card:hover { 
+        transform: rotateY(-10deg) rotateX(5deg) scale(1.05) translateZ(20px);
+        box-shadow: -10px 10px 40px rgba(16,50,92,.2); 
+    }
+    .video-thumbnail {
+        position: relative; aspect-ratio: 16/9; background-color: var(--line);
+        background-size: cover; background-position: center; transform: translateZ(20px);
+    }
+    .video-thumbnail::before {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, transparent 40%); opacity: 0.8; transition: opacity .2s ease;
+    }
+    .video-card:hover .video-thumbnail::before { opacity: 1; }
+    .play-icon {
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%) scale(1); width: 60px; height: 60px;
+        background: rgba(255,255,255,0.9); border-radius: 50%;
+        display: grid; place-items: center; transition: transform .2s ease;
+    }
+    .play-icon svg { color: var(--blue); }
+    .video-card:hover .play-icon { transform: translate(-50%, -50%) scale(1.1); }
+    .video-title {
+        font-weight: 700; padding: 0.8rem 1rem;
+        background-color: #fff; color: var(--ink-2); transform: translateZ(10px);
+    }
+
+    /* === CONTACT SECTION: REFINED FORMS & BUBBLES === */
+    .involved-wrap { max-width: 650px; margin: 2rem auto 0; }
+    .form{
+      background:#fff; border:1px solid var(--line);
+      border-radius:var(--radius); padding: clamp(1.5rem, 4vw, 2rem); box-shadow:var(--shadow);
+    }
+    .form-row{display:flex; flex-direction:column; gap:.35rem; margin-bottom:1rem}
+    label{font-weight:700; color:var(--ink-2)}
+    input, select{
+      padding:.7rem .8rem; border-radius:10px; border:1px solid var(--line);
+      background:#fff; color:#0a2244; outline:none; font-size: 1rem;
+      transition: all .2s;
+    }
+    input:focus, select:focus{border-color:var(--blue-2); box-shadow:0 0 0 3px rgba(26,115,232,.18)}
+    .form .btn-blue{margin-top:.4rem; width: 100%; padding: 1rem; font-size: 1.05rem;}
+    .form-msg{min-height:1.2em; color:#0B2A52; margin-top:.5rem; font-weight: 600;}
+    
+    .contact-bubbles { text-align: center; margin-top: 3rem; }
+    .contact-bubbles p { color: var(--muted); font-weight: 600; margin-bottom: 1.5rem; }
+    .bubble-wrapper { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .bubble {
+        display: flex; align-items: center; gap: 0.6rem; background: #fff;
+        padding: 0.8rem 1.5rem; border-radius: 999px; box-shadow: 0 5px 15px rgba(16,50,92,.1);
+        border: 1px solid var(--line); font-weight: 700; color: var(--ink-2);
+        transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .bubble:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(16,50,92,.15); }
+    .bubble img { /* Switched from 'svg' to 'img' */
+    width: 24px; 
+    height: 24px; 
+}
+    #emailBubble path { fill: #EA4335; }
+
+    /* Footer */
+    .site-footer{background:#0C2340; color:#EAF2FF}
+    .foot{display:grid; gap:2rem; grid-template-columns:1.2fr 1fr 1fr; padding:3rem 0; align-items: center;}
+    .foot-brand{display:flex; gap:.7rem; align-items:center}
+    .foot-brand img{width:44px; height:44px}
+    .foot-nav{display:flex; gap:1rem; flex-wrap:wrap}
+    .foot-legal{opacity:.85; text-align: right;}
+    
+    /* Reveal-on-scroll animations */
+    .reveal{opacity:0; transform:translateY(25px); transition:opacity .8s cubic-bezier(.5,0,0,1), transform .8s cubic-bezier(.5,0,0,1)}
+    .reveal.visible{opacity:1; transform:translateY(0)}
+
+/* =====================================================
+   WATCH SECTION - FINAL, POLISHED & CORRECTED
+   ===================================================== */
+.h-section-wrapper { display: flex; align-items: center; gap: 0.75rem; }
+.h-section-arrow { width: 24px; height: 24px; color: var(--blue); }
+.h-section-wrapper + .section-subtitle { margin-top: 0; margin-left: calc(24px + 0.75rem); text-align: left; }
+
+/* The main wrapper is now full-width */
+.watch-carousel-wrapper {
+    position: relative;
+    margin-top: 2.5rem;
+}
+/* The Swiper instance itself is constrained to the main container width */
+.watch-carousel {
+    width: min(1200px, 92%); /* FINAL FIX: Constrains the slides to the page width */
+    margin: 0 auto; /* FINAL FIX: Centers the constrained slides */
+    overflow: visible; /* Allows shadows to be seen */
+    padding: 5px;
+}
+.watch-carousel .swiper-slide { height: auto; display: flex; flex-direction: column; }
+
+.watch-card {
+    display: flex; flex-direction: column; height: 100%;
+    border-radius: 16px; overflow: hidden; background: var(--paper);
+    box-shadow: 0 5px 15px rgba(16,50,92,.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.watch-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(16,50,92,.12);
+    text-decoration: none;
+}
+.watch-thumbnail {
+    aspect-ratio: 9 / 14; position: relative;
+    background-size: cover; background-position: center;
+    background-color: var(--paper-3); /* Placeholder color if image is missing */
+}
+.watch-thumbnail .play-icon {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0; width: 70px; height: 70px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(4px); border-radius: 50%;
+    display: grid; place-items: center;
+    transition: transform .3s ease, opacity .3s ease; color: var(--blue);
+}
+.watch-card:hover .play-icon { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+.watch-info { padding: 1rem; margin-top: auto; }
+.watch-title { font-weight: 700; font-size: 1rem; color: var(--ink-2); margin: 0 0 0.25rem 0; }
+.watch-meta { font-size: 0.9rem; color: var(--muted); margin: 0; }
+
+/* Navigation arrows now have space and are positioned perfectly */
+.watch-button-prev,
+.watch-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* This centers them vertically to the carousel height */
+    width: 48px; height: 48px; background: #fff; border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 10;
+    display: grid; place-items: center; color: var(--ink-2);
+    cursor: pointer; transition: all 0.2s ease;
+}
+/* FINAL FIX: The key to placing them outside is using percentages from the viewport */
+.watch-button-prev { left: max(1rem, 50% - 600px - 40px); }
+.watch-button-next { right: max(1rem, 50% - 600px - 40px); }
+
+.watch-button-prev:hover,
+.watch-button-next:hover { transform: translateY(-50%) scale(1.05); }
+
+.watch-button-prev svg, .watch-button-next svg { stroke-width: 2.5px; }
+
+@media (max-width: 1320px) { /* Adjust breakpoint for arrows to move inward */
+    .watch-button-prev { left: 1rem; }
+    .watch-button-next { right: 1rem; }
+}
+@media (max-width: 768px) {
+    .h-section-wrapper + .section-subtitle { margin-left: 0; text-align: center; }
+    .h-section-wrapper { justify-content: center; }
+    /* Hide arrows on mobile and rely on swipe */
+    .watch-button-prev, .watch-button-next { display: none; }
+}
+
+    /* ============================ */
+    /* === RESPONSIVE STYLING === */
+    /* ============================ */
+
+    @media (max-width: 960px){
+        .grid-2{grid-template-columns:1fr; gap: 2.5rem; text-align: center;}
+        .grid-2 > div:first-child { order: 2; } /* Image below text on mobile */
+        .grid-2 > div:last-child { order: 1; }
+        .about-card { text-align: left; } /* Reset text-align for card content */
+        .portrait { margin: 0 auto; }
+        
+        .foot{grid-template-columns:1fr; text-align: center; gap: 2.5rem;}
+        .foot-brand, .foot-nav { justify-content: center; }
+        .foot-legal{text-align: center;}
+    }
+
+    @media (max-width: 900px){
+      .nav-toggle{display:flex}
+      .nav-menu{
+        position:fixed; left: 1rem; right: 1rem; top: calc(var(--header-height, 89px) + 0.5rem); background:#fff;
+        border:1px solid var(--line); border-radius:12px; padding:.8rem;
+        flex-direction:column; gap:.35rem; box-shadow:var(--shadow);
+        width: calc(100% - 2rem);
+        transform: translateY(-20px) scale(0.98); opacity: 0; pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .nav-menu a{color:#10325C; display: block; padding: 0.8rem;}
+      .nav-menu.show{display:flex; transform: translateY(0) scale(1); opacity: 1; pointer-events: auto;}
+    }
+    
+    @media (max-width: 1100px){
+      .program-cards{grid-template-columns:repeat(2, 1fr)}
+    }
+    @media (max-width: 640px){
+      body { font-size: 15px; }
+      .program-cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" role="banner">
+    <div class="nav container">
+      <a class="brand" href="#top">
+        <img src="logo.png" alt="Λογότυπο Έλενας Κούσιου Χατζηδημητρίου" />
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Άνοιγμα μενού">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Κύρια Πλοήγηση">
+        <a href="#about">Σχετικά</a>
+        <a href="#program">Θέσεις</a>
+        <a href="#articles">Άρθρα</a>
+        <a href="#watch">Watch</a>
+        <a href="#get-involved" class="btn btn-outline" style="width:100%; text-align:center;">Συμμετοχή</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" tabindex="-1">
+    <div class="election-ribbon" aria-hidden="true">Βουλευτικές Εκλογές • 24 Μαΐου 2026</div>
+
+    <section class="hero" aria-label="Κεντρική εικόνα της καμπάνιας" id="hero">
+      <div class="hero-inner container reveal">
+        <h1 class="hero-title">
+          <span class="wave-underline">Elena Koushou<br/>Hadjidemetriou</span>
+        </h1>
+        <p class="hero-kicker">Δικαιοσύνη • Διαφάνεια • Στέγαση για Όλους</p>
+        <div class="hero-cta">
+          <a href="#program" class="btn btn-blue">Δες το Πρόγραμμα</a>
+          <a href="#get-involved" class="btn btn-outline">Δήλωσε Συμμετοχή</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container grid-2">
+        <div>
+          <img class="portrait reveal" src="portrait.png" alt="Πορτρέτο της Elena Koushou Hadjidemetriou" />
+        </div>
+        <div class="about-card reveal">
+          <h2 class="h-section">Μια Δύναμη για την Κύπρο</h2>
+          <p>
+            Η Elena Koushou Hadjidemetriou είναι εταίρος στη δικηγορική εταιρεία Koushos Korfiotis Papacharalambous LLC, έμπειρη δικηγόρος, διαμεσολαβήτρια και Πρόεδρος του ΚΟΑΓ. Με βαθιά γνώση σε θέματα συμμόρφωσης (AML) και πάθος για την προσιτή στέγαση, εργάζεται καθημερινά για ρεαλιστικές λύσεις που βελτιώνουν τη ζωή των πολιτών.
+          </p>
+          <a href="bio.html" class="btn btn-outline" style="margin-top: 1rem;">Αναλυτικό Βιογραφικό</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote">
+      <div class="container">
+        <img src="vote-elections.gif" alt="Animation of a hand dropping a vote into a ballot box" class="quote-animation reveal" id="voteAnimationGif" />
+        <blockquote class="reveal">
+          «Η ψήφος σου είναι η φωνή σου. Στις 24 Μαΐου 2026, ας τη μετατρέψουμε σε πράξη για μια δίκαιη, σύγχρονη Κύπρο.»
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="program" class="section">
+      <div class="container">
+        <h2 class="h-section center reveal">Θέσεις & Πρόγραμμα</h2>
+        <p class="section-subtitle center reveal">Οι προτεραιότητές μας για μια Κύπρο που προχωρά μπροστά, με ασφάλεια και ευκαιρίες για όλους.</p>
+        <div class="program-cards">
+            <!-- Program Card 1 -->
+            <a href="program-education.html" class="program-card reveal">
+                <h3><svg class="program-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 5 4 5 6 5s6-0 6-5v-5"></path></svg>Εκπαίδευση</h3>
+                <p>Σύγχρονα προγράμματα, ψηφιακά εργαλεία, ίσες ευκαιρίες για κάθε παιδί.</p>
+                <span class="read-more-prompt">Διαβάστε Αναλυτικά</span>
+            </a>
+            <!-- Program Card 2 -->
+            <a href="program-economy.html" class="program-card reveal">
+                <h3><svg class="program-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>Οικονομία</h3>
+                <p>Ανάπτυξη με κοινωνική συνοχή, καινοτομία και στήριξη των μικρομεσαίων.</p>
+                <span class="read-more-prompt">Διαβάστε Αναλυτικά</span>
+            </a>
+            <!-- Program Card 3 -->
+            <a href="program-health.html" class="program-card reveal">
+                <h3><svg class="program-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>Υγεία</h3>
+                <p>Ενίσχυση ΓεΣΥ, έμφαση στην πρόληψη και ποιοτική φροντίδα κοντά στον πολίτη.</p>
+                <span class="read-more-prompt">Διαβάστε Αναλυτικά</span>
+            </a>
+            <!-- Program Card 4 -->
+            <a href="program-justice.html" class="program-card reveal">
+                <h3><svg class="program-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>Δικαιοσύνη</h3>
+                <p>Ισχυροί θεσμοί, λογοδοσία παντού και αποτελεσματική απονομή Δικαιοσύνης.</p>
+                <span class="read-more-prompt">Διαβάστε Αναλυτικά</span>
+            </a>
+            <!-- Program Card 5 -->
+            <a href="program-seniors.html" class="program-card reveal">
+                <h3><svg class="program-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l2 2"></path></svg>Τρίτη Ηλικία</h3>
+                <p>Αξιοπρέπεια, ποιοτική φροντίδα στο σπίτι και ενεργός ρόλος στην κοινότητα.</p>
+                <span class="read-more-prompt">Διαβάστε Αναλυτικά</span>
+            </a>
+            <!-- Program Card 6 -->
+            <a href="program-cities.html" class="program-card reveal">
+                <h3><svg class="program-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Βιώσιμες Πόλεις</h3>
+                <p>Έξυπνες, πράσινες πόλεις με προσιτή στέγη, προσβασιμότητα και υψηλή ποιότητα ζωής.</p>
+                <span class="read-more-prompt">Διαβάστε Αναλυτικά</span>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="section section-bg-paper">
+      <div class="container">
+        <h2 class="h-section center reveal">Άρθρα & Παρεμβάσεις</h2>
+         <div class="swiper articles-carousel reveal">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+              <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-1.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Διαφάνεια</span><time datetime="2025-07-10">10 Ιουλ 2025</time></div>
+                  <h3 class="article-title">Η Κύπρος μπροστά στον καθρέφτη του κράτους δικαίου</h3>
+                  <p class="article-excerpt">Ανάλυση της Έκθεσης της ΕΕ για το 2025 και οι προκλήσεις για τη δικαιοσύνη και τη διαφάνεια.</p>
+                  <div class="article-actions"><a href="article-kratos-dikaiou.html" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div> -->
+
+            <div class="swiper-slide">
+               <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-1.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Διαφάνεια</span><time datetime="2025-08-02">2 Αυγ 2025</time></div>
+                  <h3 class="article-title">Η Κύπρος μπροστά στον καθρέφτη του κράτους δικαίου</h3>
+                  <p class="article-excerpt">Ανάλυση της Έκθεσης της ΕΕ για το 2025 και οι προκλήσεις για τη δικαιοσύνη.</p>
+                  <div class="article-actions"><a href="article-kratos-dikaiou.html" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+               <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-2.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Οικονομία</span><time datetime="2025-08-02">2 Αυγ 2025</time></div>
+                  <h3 class="article-title">ΜΜΕ & καινοτομία: ρεαλιστική στήριξη για ανάπτυξη</h3>
+                  <p class="article-excerpt">Απλούστευση διαδικασιών, πρόσβαση σε ρευστότητα & δίκτυα για εξωστρέφεια.</p>
+                  <div class="article-actions"><a href="#" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-3.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Υγεία</span><time datetime="2025-09-14">14 Σεπ 2025</time></div>
+                  <h3 class="article-title">ΓεΣΥ με επίκεντρο τον πολίτη: δείκτες ποιότητας</h3>
+                  <p class="article-excerpt">Μετρήσιμη βελτίωση στην πρωτοβάθμια, ώστε τα νοσοκομεία να ανασάνουν.</p>
+                  <div class="article-actions"><a href="#" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-4.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Διαφάνεια</span><time datetime="2025-10-01">1 Οκτ 2025</time></div>
+                  <h3 class="article-title">Ανοικτά δεδομένα & λογοδοσία στην πράξη</h3>
+                  <p class="article-excerpt">Ένα διαφανές κράτος χτίζει εμπιστοσύνη και μειώνει τη γραφειοκρατία.</p>
+                  <div class="article-actions"><a href="#" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-5.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Πόλεις</span><time datetime="2025-11-20">20 Νοε 2025</time></div>
+                  <h3 class="article-title">Βιώσιμες πόλεις: σκίαση, πράσινο και προσβασιμότητα</h3>
+                  <p class="article-excerpt">Απλές παρεμβάσεις που αλλάζουν την καθημερινότητα σε κάθε γειτονιά.</p>
+                  <div class="article-actions"><a href="#" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div>
+            <div class="swiper-slide">
+              <article class="article-card">
+                <div class="article-cover" style="background-image:url('article-6.jpg')"></div>
+                <div class="article-body">
+                  <div class="article-meta"><span class="tag">Παιδεία</span><time datetime="2025-12-05">5 Δεκ 2025</time></div>
+                  <h3 class="article-title">Διαφάνεια στα σχολεία: συμμετοχή γονέων & μαθητών</h3>
+                  <p class="article-excerpt">Ανοικτές πρακτικές που ενισχύουν εμπιστοσύνη και αποτελεσματικότητα.</p>
+                  <div class="article-actions"><a href="#" class="btn-link">Διαβάστε το Άρθρο</a></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-nav reveal">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="watch" class="section">
+    <div class="container">
+        <div class="h-section-wrapper reveal">
+            <svg class="h-section-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 8L0 15.7942L0 0.205771L16 8Z" fill="currentColor"/></svg>
+            <h2 class="h-section">Watch</h2>
+        </div>
+        <p class="section-subtitle reveal">Δείτε ομιλίες, συνεντεύξεις και παρεμβάσεις της Έλενας.</p>
+    </div>
+    
+    <!-- FINAL FIX: This wrapper is now full-width, allowing arrows to sit outside -->
+    <div class="watch-carousel-wrapper reveal">
+        <div class="swiper watch-carousel">
+            <div class="swiper-wrapper">
+            
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <a href="https://inbusinessnews.reporter.com.cy/article/429107/elena-koysioy-chatzidimitrioy-olokliromeni-i-stegstiki-politiki-erchontai-nees-lyseis-kai-progammata" target="_blank" rel="noopener" class="watch-card">
+                        <div class="watch-thumbnail" style="background-image: url('video-thumb-1.jpg');">
+                             <div class="play-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                        </div>
+                        <div class="watch-info">
+                            <h3 class="watch-title">Συνέντευξη στο INBUSINESS</h3>
+                            <p class="watch-meta">Blog Post • 1 εβδομάδα πριν</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <a href="https://www.youtube.com/watch?v=6gOvvM-5HO8&t=578s" target="_blank" rel="noopener" class="watch-card">
+                        <div class="watch-thumbnail" style="background-image: url('video-thumb-2.jpg');">
+                             <div class="play-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                        </div>
+                        <div class="watch-info">
+                            <h3 class="watch-title">Συνέντευξη για το Κράτος Δικαίου</h3>
+                            <p class="watch-meta">YouTube • 2 εβδομάδες πριν</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <a href="https://x.com/your_username/status/your_status_id" target="_blank" rel="noopener" class="watch-card">
+                        <div class="watch-thumbnail" style="background-image: url('video-thumb-3.jpg');">
+                             <div class="play-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></div>
+                        </div>
+                        <div class="watch-info">
+                            <h3 class="watch-title">Συζήτηση για την Παιδεία του Αύριο</h3>
+                            <p class="watch-meta">X Post • 3 εβδομάδες πριν</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <a href="#" target="_blank" rel="noopener" class="watch-card">
+                        <div class="watch-thumbnail" style="background-image: url('article-1.jpg');">
+                             <div class="play-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                        </div>
+                        <div class="watch-info">
+                            <h3 class="watch-title">Τοποθέτηση στη Βουλή</h3>
+                            <p class="watch-meta">Facebook Video • 1 μήνα πριν</p>
+                        </div>
+                    </a>
+                </div>
+                
+                 <!-- Slide 5 -->
+                 <div class="swiper-slide">
+                    <a href="https://youtube.com/your_video_id" target="_blank" rel="noopener" class="watch-card">
+                        <div class="watch-thumbnail" style="background-image: url('article-5.jpg');">
+                             <div class="play-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
+                        </div>
+                        <div class="watch-info">
+                            <h3 class="watch-title">Ο πολίτης στο επίκεντρο</h3>
+                            <p class="watch-meta">YouTube • 1 μήνα πριν</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        <!-- Navigation Buttons remain inside the full-width wrapper -->
+        <div class="watch-button-prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg></div>
+        <div class="watch-button-next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+    </div>
+</section>
+
+    <section id="get-involved" class="section section-bg-paper">
+      <div class="container">
+        <h2 class="h-section center reveal">Γίνε Μέρος της Αλλαγής</h2>
+        <p class="section-subtitle center reveal">Η δύναμή μας είναι οι άνθρωποί μας. Συμπλήρωσε τη φόρμα για να γίνεις εθελοντής ή επικοινώνησε μαζί μας.</p>
+        <div class="involved-wrap">
+          <form class="form reveal" aria-label="Φόρμα εθελοντισμού" novalidate>
+            <div class="form-row">
+              <label for="name">Ονοματεπώνυμο</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="interest">Πως θέλεις να βοηθήσεις;</label>
+              <select id="interest" name="interest">
+                <option>Εθελοντισμός στην περιοχή μου</option>
+                <option>Φιλοξενία οικιακής συγκέντρωσης</option>
+                <option>Βοήθεια στα social media</option>
+                <option>Οτιδήποτε χρειαστεί</option>
+              </select>
+            </div>
+            <!-- REMEMBER to replace with your actual reCAPTCHA site key -->
+            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE" style="margin: 1rem 0; transform:scale(0.9); transform-origin:0 0;"></div>
+            
+            <button type="submit" class="btn btn-blue">Δήλωσε Συμμετοχή</button>
+            <p class="form-msg" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-bubbles reveal">
+            <p>Ή επικοινώνησε απευθείας με την ομάδα:</p>
+     <div class="bubble-wrapper">
+    <a class="bubble reveal" id="whatsappBubble" target="_blank" rel="noopener">
+        <!-- WhatsApp PNG Icon -->
+        <img src="wa.png" alt="WhatsApp Icon" />
+        WhatsApp
+    </a>
+     <a class="bubble reveal" id="viberBubble" target="_blank" rel="noopener">
+        <!-- Viber PNG Icon -->
+        <img src="v.png" alt="Viber Icon" />
+        Viber
+    </a>
+     <a class="bubble reveal" id="emailBubble" rel="noopener">
+        <!-- Polished Email Icon -->
+        <svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+        Email
+    </a>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <div class="foot-brand">
+        <img src="logo.png" alt="" />
+        <div>
+          <strong>Elena Koushou Hadjidemetriou</strong><br />
+          Βουλευτικές Εκλογές 2026
+        </div>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="#about">Σχετικά</a>
+        <a href="#program">Πρόγραμμα</a>
+        <a href="#articles">Άρθρα</a>
+        <a href="#get-involved">Συμμετοχή</a>
+      </nav>
+      <div class="foot-legal">© 2025 • Με επιφύλαξη παντός δικαιώματος.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // ===== GLOBAL CONTACT SETTINGS =====
+      const CONTACT = {
+        phone: "+35799123456", // Cyprus number format
+        email: "elena.campaign@email.com",
+        whatsappText: "Γεια σας! Ενδιαφέρομαι να μάθω περισσότερα για την καμπάνια της Έλενας."
+      };
+
+      // ===== ENHANCED MOBILE MENU =====
+      const navToggle = document.querySelector('.nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          const open = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!open));
+          navMenu.classList.toggle('show');
+        });
+      }
+      
+      // Close mobile menu when a link is clicked
+      document.querySelectorAll('#nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('show');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // ===== SMOOTH SCROLL =====
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const id = a.getAttribute('href');
+          if (id === '#top' || id ==='#') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+          };
+          const el = document.querySelector(id);
+          if (!el) return;
+          e.preventDefault();
+          const offsetTop = el.getBoundingClientRect().top + window.scrollY - (document.querySelector('.site-header').offsetHeight + 20);
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        });
+      });
+
+      // ===== SCROLL PROGRESS BAR =====
+      const bar = document.querySelector('.scroll-progress span');
+      const onScrollProgress = () => {
+        const h = document.documentElement;
+        const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
+        if (bar) bar.style.width = `${scrolled * 100}%`;
+      };
+      window.addEventListener('scroll', onScrollProgress, { passive: true });
+
+      // ===== ENHANCED REVEAL-ON-SCROLL ANIMATION (WITH STAGGERING) =====
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // If the element is inside a staggering container, add delays
+            const parent = entry.target.parentElement;
+            if (parent.classList.contains('program-cards') || parent.classList.contains('video-grid')) {
+              const items = Array.from(parent.children);
+              items.forEach((item, index) => {
+                item.style.transitionDelay = `${index * 100}ms`;
+              });
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+      // ===== SWIPER.JS CAROUSEL FOR ARTICLES =====
+      const articlesCarousel = new Swiper('.articles-carousel', {
+        loop: true,
+        slidesPerView: 1.2, // Show a "peek" of the next slide
+        spaceBetween: 20,
+        centeredSlides: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          640: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false, },
+          1024: { slidesPerView: 3, spaceBetween: 30, centeredSlides: false, },
+        }
+      });
+      
+      // ===== VOLUNTEER FORM HANDLER (DEMO) =====
+      const form = document.querySelector('.form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const msg = form.querySelector('.form-msg');
+          const data = Object.fromEntries(new FormData(form).entries());
+          
+          if (!data.name || !data.email) {
+            msg.textContent = 'Παρακαλώ συμπληρώστε το όνομα και το email σας.';
+            msg.style.color = '#D93025';
+            return;
+          }
+          // ADD your reCAPTCHA validation logic here before submitting the form.
+          
+          msg.textContent = 'Ευχαριστούμε για τη συμμετοχή! Θα επικοινωνήσουμε σύντομα.';
+          msg.style.color = 'var(--blue)';
+          setTimeout(() => { form.reset(); msg.textContent = ''; }, 4000);
+        });
+      }
+
+      // ===== CONTACT BUBBLES LINK BUILDER =====
+      const setupContactLink = (id, url) => {
+          const element = document.getElementById(id);
+          if (element) element.href = url;
+      };
+      
+      setupContactLink('whatsappBubble', `https://wa.me/${CONTACT.phone.replace(/\D/g,'')}?text=${encodeURIComponent(CONTACT.whatsappText)}`);
+      setupContactLink('viberBubble', `viber://chat?number=%2B${CONTACT.phone.replace(/\D/g,'')}`);
+      setupContactLink('emailBubble', `mailto:${CONTACT.email}?subject=${encodeURIComponent('Επικοινωνία για την καμπάνια 2026')}`);
+
+    });
+
+    const watchCarousel = new Swiper('.watch-carousel', {
+    loop: false, // Set to true if you want it to be an infinite loop
+    slidesPerView: 'auto', // Important for the dynamic width look
+    spaceBetween: 25,
+    navigation: {
+        nextEl: '.watch-button-next',
+        prevEl: '.watch-button-prev',
+    },
+    breakpoints: {
+      // Set slidesPerView explicitly to control the number of visible cards
+      320: { slidesPerView: 1.3, spaceBetween: 15 },
+      480: { slidesPerView: 2.1, spaceBetween: 20 },
+      768: { slidesPerView: 3, spaceBetween: 25 },
+      1024: { slidesPerView: 4, spaceBetween: 25 },
+      1200: { slidesPerView: 4.5, spaceBetween: 25 },
+    }
+});
+  </script>
+</body>
+</html>
